@@ -1,0 +1,33 @@
+package intro;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World!!");
+		
+		String metin ="Vadesi Yüksek";
+		String altMetin= "Dolar";
+		
+		int vade=24;
+		double dunKur=82.8;
+		double bugunKur=22.8;
+	
+		// System.out.println(metin);
+		// System.out.println(kur);
+		
+		boolean kurDustumu=false;
+		System.out.println(kurDustumu);
+		
+		String okYonu="";
+		
+		if(dunKur<bugunKur) {
+			okYonu="up.jpg";
+		}
+		else {
+			okYonu="down.jpg";
+		}
+		System.out.println(okYonu);
+	}
+
+}

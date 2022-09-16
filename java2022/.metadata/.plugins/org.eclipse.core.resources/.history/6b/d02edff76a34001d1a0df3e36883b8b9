@@ -1,0 +1,44 @@
+package intro;
+
+import java.util.Iterator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World!!");
+		
+		String metin ="Vadesi Yüksek";
+		String altMetin= "Dolar";
+		
+		int vade=24;
+		double dunKur=82.8;
+		double bugunKur=22.8;
+	
+		// System.out.println(metin);
+		// System.out.println(kur);
+		 
+		boolean kurDustumu=false;
+		System.out.println(kurDustumu);
+		
+		String okYonu="";
+		
+		if(dunKur<bugunKur) {
+			okYonu="up.jpg";
+		}
+		else if(dunKur==bugunKur){
+			okYonu="equal.jpg";
+		}
+		else {
+			okYonu="down.jpg";
+		}
+		//System.out.println(okYonu);
+		
+		String[] krediler = {"Hızlı","HalkBank","Emekli","Eşya","Kriz"};
+		
+		for (int i = 0; i < krediler.length; i++) {
+			System.out.println(krediler[i]);
+		}
+	}
+
+}

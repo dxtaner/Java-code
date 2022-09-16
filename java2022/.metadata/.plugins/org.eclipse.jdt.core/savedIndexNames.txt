@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\Taner\eclipse-workspace\java2022\.metadata\.plugins\org.eclipse.jdt.core
+3953367232.index
+1278154857.index
+380197650.index
+1865797976.index
