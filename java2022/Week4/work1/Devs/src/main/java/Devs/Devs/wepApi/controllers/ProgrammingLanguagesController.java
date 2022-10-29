@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Devs.Devs.business.abstracts.ProgrammingLanguageServices;
@@ -41,12 +42,12 @@ public class ProgrammingLanguagesController {
 	}
 
 	@PutMapping("/update/{id}")
-	public void update(@PathVariable String name, @PathVariable int id) throws Exception {
+	public void update(@RequestParam String name, @RequestParam  int id) throws Exception {
 		programmingLanguagesServices.update(name,id);
     }
 	
 	@DeleteMapping("/delete/{id}")
-	public void delete(@PathVariable int id) throws Exception {
+	public void delete(@RequestParam  int id) throws Exception {
 		programmingLanguagesServices.delete(id);
 	}
 	

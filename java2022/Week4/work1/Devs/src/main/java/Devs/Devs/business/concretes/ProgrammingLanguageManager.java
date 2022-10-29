@@ -50,24 +50,11 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageServices{
 
 	@Override
 	public void update(String name, int id) throws Exception{
-		if(name.isEmpty()) {
-			 throw new Exception("Name cannot be empty");
-		}
-		for (ProgrammingLanguage programmingLanguage : programmingLanguageRepository.getAll()) {
-			if (programmingLanguage.getName().equals(name)) {
-				throw new Exception("Name cannot be repeated");
-            }	  
-		 }
 		 programmingLanguageRepository.update(name, id);
 	}
 
 	@Override
 	public void delete(int id) throws Exception{
-		for(ProgrammingLanguage programmingLanguage :programmingLanguageRepository.getAll()) {
-			if(programmingLanguage.getId() !=id) {
-				throw new Exception("Id Is Wrong");
-			}
-		}
 		programmingLanguageRepository.delete(id);
 	}
 

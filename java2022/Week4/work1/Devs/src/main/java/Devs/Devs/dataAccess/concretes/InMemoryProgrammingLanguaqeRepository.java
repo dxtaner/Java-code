@@ -33,13 +33,16 @@ public class InMemoryProgrammingLanguaqeRepository implements ProgrammingLanguag
 
 	@Override 
 	public void update(String name,int id) throws Exception {
-		ProgrammingLanguage programmingLanguage = getById(id-1);
-		programmingLanguage.setName(name);
+		for (ProgrammingLanguage programmingLanguage :programmingLanguages ) {
+			if(programmingLanguage.getId()==id) {
+				programmingLanguage.setName(name);
+			}
+		}	
 	}
 
 	@Override
 	public void delete(int id) {
-		programmingLanguages.remove((id-1));
+			programmingLanguages.remove((id-1));	
 	}
 
 	@Override
