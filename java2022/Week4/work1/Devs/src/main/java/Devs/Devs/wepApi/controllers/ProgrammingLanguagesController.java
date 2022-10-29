@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Devs.Devs.business.abstracts.ProgrammingLanguageServices;
 import Devs.Devs.entities.concretes.ProgrammingLanguage;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/api/programminglanguages")
