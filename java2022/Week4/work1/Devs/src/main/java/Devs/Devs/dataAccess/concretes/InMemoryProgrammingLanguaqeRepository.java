@@ -37,12 +37,16 @@ public class InMemoryProgrammingLanguaqeRepository implements ProgrammingLanguag
 			if(programmingLanguage.getId()==id) {
 				programmingLanguage.setName(name);
 			}
-		}	
+		}
 	}
 
 	@Override
 	public void delete(int id) {
-			programmingLanguages.remove((id-1));	
+		for (ProgrammingLanguage programmingLanguage :programmingLanguages ) {
+			if(programmingLanguage.getId()==id) {
+				programmingLanguages.remove(id-1);
+			}
+		}
 	}
 
 	@Override
