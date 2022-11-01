@@ -29,7 +29,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageServices{
 	public ProgrammingLanguage getById(int id) {
 		for (ProgrammingLanguage programmingLanguage : programmingLanguageRepository.getAll()) {
 			if(programmingLanguage.getId()==id) {
-				return programmingLanguageRepository.getById(id);
+				return programmingLanguage;
 			}
 		}
 		return null;
@@ -37,7 +37,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageServices{
 
 	@Override
 	public void add(ProgrammingLanguage programmingLanguage) throws Exception {
-		 if(programmingLanguage.getName().isEmpty()) {
+		 if(programmingLanguage.getName().isEmpty() || programmingLanguage.getName().isBlank()) {
 			 throw new Exception("Name cannot be empty");
 		 }
 		 for (ProgrammingLanguage language : programmingLanguageRepository.getAll()) {
@@ -45,17 +45,32 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageServices{
             	throw new Exception("Name cannot be repeated");
             }	 
 		 }
+		 for (ProgrammingLanguage language : programmingLanguageRepository.getAll()) {
+	            if (language.getId()==programmingLanguage.getId()) {
+	            	throw new Exception("Id cannot be repeated");
+	            }	 
+		 }
 		 programmingLanguageRepository.add(programmingLanguage);
 	}
 
 	@Override
 	public void update(String name, int id) throws Exception{
-		 programmingLanguageRepository.update(name, id);
+		for (ProgrammingLanguage language : programmingLanguageRepository.getAll()) {
+            if (language.getName().equals(name)) {
+            	throw new Exception("Name cannot be repeated");
+            }	 
+		}
+		for (ProgrammingLanguage language : programmingLanguageRepository.getAll()) {
+            if (language.getId()==id) {
+	    		programmingLanguageRepository.update(name, id);
+            }	
+		}
+
 	}
 
 	@Override
 	public void delete(int id) throws Exception{
-		programmingLanguageRepository.delete(id);
+		programmingLanguageRepository.delete(id); 
 	}
 
 }
