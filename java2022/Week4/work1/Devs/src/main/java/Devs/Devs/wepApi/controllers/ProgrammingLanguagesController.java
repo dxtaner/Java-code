@@ -4,14 +4,14 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Devs.Devs.business.abstracts.ProgrammingLanguageServices;
+import Devs.Devs.business.requests.CreateProgrammingLanguageRequest;
+import Devs.Devs.business.responses.GetAllProgrrammingLanguagesResponse;
 import Devs.Devs.entities.concretes.ProgrammingLanguage;
 
 @RestController
@@ -26,27 +26,27 @@ public class ProgrammingLanguagesController {
 	}
 
 	@GetMapping("/getall")
-	public List<ProgrammingLanguage> getAll(){
+	public List<GetAllProgrrammingLanguagesResponse> getAll(){
 		return programmingLanguagesServices.getAll();
 	}
 	
 	@GetMapping("/{id}")
-    public ProgrammingLanguage getProgrammingLanguageById(@PathVariable int id) {
+    public ProgrammingLanguage getProgrammingLanguageById(int id) {
         return programmingLanguagesServices.getById(id);
     }
 	
 	@PostMapping("/add")
-	public void add(ProgrammingLanguage programmingLanguage) throws Exception {
-		programmingLanguagesServices.add(programmingLanguage);
+	public void add(CreateProgrammingLanguageRequest createProgrammingLanguageRequest) throws Exception {
+		this.programmingLanguagesServices.add(createProgrammingLanguageRequest);
 	}
 
 	@PutMapping("/update/{id}")
-	public void update(@RequestParam String name, @RequestParam  int id) throws Exception {
+	public void update(String name,int id) throws Exception {
 		programmingLanguagesServices.update(name,id);
     }
 	
 	@DeleteMapping("/delete/{id}")
-	public void delete(@RequestParam  int id) throws Exception {
+	public void delete(int id) throws Exception {
 		programmingLanguagesServices.delete(id);
 	}
 	
