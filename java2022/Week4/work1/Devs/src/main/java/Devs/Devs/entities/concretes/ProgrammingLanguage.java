@@ -1,28 +1,28 @@
 package Devs.Devs.entities.concretes;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import nonapi.io.github.classgraph.json.Id;
+
+@Table(name="pprogrammingLanguage")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class ProgrammingLanguage {
-	private int id;
-	private String name;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="programmingLanguageId")
+	private int programmingLanguageId;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public ProgrammingLanguage() {
-		super();
-	}
-	public ProgrammingLanguage(int id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+	@Column(name="programmingLanguageName")
+	private String programmingLanguageName;
+	
 	
 }
