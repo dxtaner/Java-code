@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Devs.Devs.business.abstracts.ProgrammingLanguageServices;
-import Devs.Devs.business.requests.CreateProgrammingLanguageRequest;
-import Devs.Devs.business.requests.UpdateProgrammingLanguageRequest;
-import Devs.Devs.business.responses.GetAllProgrrammingLanguagesResponse;
+import Devs.Devs.business.requests.programmingLanguageRequests.CreateProgrammingLanguageRequest;
+import Devs.Devs.business.requests.programmingLanguageRequests.UpdateProgrammingLanguageRequest;
+import Devs.Devs.business.responses.programmingLanguageResponses.GetAllProgrrammingLanguagesResponse;
 import Devs.Devs.entities.concretes.ProgrammingLanguage;
 
 @RestController
