@@ -1,7 +1,8 @@
 package Devs.Devs.entities.concretes;
 
-import java.util.Set;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class ProgrammingLanguage {
 	@Column(name="programmingLanguageName")
 	private String programmingLanguageName;
 
-	@OneToMany(mappedBy = "programminglanguage")
-	private Set<SubTech> subTech;
+	@OneToMany(mappedBy="programmingLanguage",cascade = CascadeType.ALL)
+	private List<SubTech> subTechs;
 	
 }
